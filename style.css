@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-size: 62px;
+  color: white;
+}
+.wrapper {
+  background: purple;
+  min-height: 80vh;
+  padding: 16px;
+
+  /* Grid system */
+  display: grid;
+  gap: 10px;
+
+  /* fr stands for fraction - repeat(3 ,1fr) */
+  /* Fixed has priority ie px, % and then fr */
+  /* grid-template-columns: 20% 2fr minmax(120px, 20%) 50px; */
+  /* grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto; */
+
+  /* NAMED GRID AREAS */
+  grid-template-areas:
+    "item8 item2 item7 "
+    "item5 item5 item6 "
+    "item3 item1 item6 "
+    "item4 item4 item9 ";
+}
+.wrapper > div {
+  background: orange;
+
+  /* Grid System */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-1 {
+  grid-area: item1;
+}
+.item-2 {
+  /* grid-row-start:3 */
+  /* grid-row-start:4 */
+  /* grid-column-start:3 */
+  /* grid-column-start:3 */
+  /* Code in line 46-47 is a shorthand for the code in line 41-44 */
+  /* grid-row: 3/4;
+  grid-column: 3/3; */
+  grid-area: item2;
+}
+.item-3 {
+  grid-area: item3;
+}
+.item-4 {
+  grid-area: item4;
+}
+.item-5 {
+  grid-area: item5;
+}
+.item-6 {
+  grid-area: item6;
+}
+.item-7 {
+  grid-area: item7;
+}
+.item-8 {
+  grid-area: item8;
+}
+.item-9 {
+  grid-area: item9;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: orange;
+  margin: auto;
+  margin-top: 50px;
+  display: none;
+}
+
+/* Media Query */
+
+/* Screen size ipad < 768px, maximum up to 768px */
+@media (max-width: 768px) {
+  .wrapper {
+    /* Grid system */
+    display: grid;
+    gap: 10px;
+
+    /* NAMED GRID AREAS */
+    grid-template-areas:
+      "item1 item1"
+      "item2 item3"
+      "item4 item4"
+      "item5 item6"
+      "item7 item7"
+      "item8 item9";
+  }
+  .circle {
+    display: block;
+  }
+}
+
+/* Screen size mobile < 576px, maximum up to 576px */
+@media (max-width: 576px) {
+  .wrapper {
+    /* Grid system */
+    display: grid;
+    gap: 10px;
+
+    /* NAMED GRID AREAS */
+    grid-template-areas:
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "item5"
+      "item6"
+      "item7"
+      "item8"
+      "item9";
+  }
+  .circle {
+    display: none;
+  }
+}
