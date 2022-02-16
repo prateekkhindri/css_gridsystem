@@ -1,7 +1,16 @@
 body {
   margin: 0;
+  padding: 0;
   font-size: 62px;
   color: white;
+}
+.wrapper > div {
+  background: orange;
+
+  /* Grid System */
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 .wrapper {
   background: purple;
@@ -24,14 +33,6 @@ body {
     "item5 item5 item6 "
     "item3 item1 item6 "
     "item4 item4 item9 ";
-}
-.wrapper > div {
-  background: orange;
-
-  /* Grid System */
-  display: grid;
-  justify-content: center;
-  align-items: center;
 }
 
 .item-1 {
@@ -68,6 +69,15 @@ body {
 .item-9 {
   grid-area: item9;
 }
+.box-1,
+.box-2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 35px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: auto;
+}
 
 .circle {
   width: 150px;
@@ -76,12 +86,28 @@ body {
   background: orange;
   margin: auto;
   margin-top: 50px;
-  display: none;
+  display: block;
+}
+
+.circle:hover {
+  background: rgb(0, 0, 0);
+}
+.gd-1,
+.gd-2 {
+  padding-top: 18px;
+  color: black;
+}
+.gd-1:hover {
+  color: rgb(245, 245, 245);
+}
+
+.gd-2:hover {
+  color: whitesmoke;
 }
 
 /* Media Query */
 
-/* Screen size ipad < 768px, maximum up to 768px */
+/* Screen size ipad < 768px, maxim@um up to 768px */
 @media (max-width: 768px) {
   .wrapper {
     /* Grid system */
@@ -99,6 +125,10 @@ body {
   }
   .circle {
     display: block;
+    background: rgb(253, 253, 5);
+  }
+  .wrapper > div {
+    background: #76c40f;
   }
 }
 
@@ -122,6 +152,16 @@ body {
       "item9";
   }
   .circle {
-    display: none;
+    display: block;
+    background: #06995c;
+    width: 100px;
+    height: 100px;
+  }
+  .wrapper > div {
+    background: rgb(4, 181, 251);
+  }
+  .box-1,
+  .box-2 {
+    font-size: 20px;
   }
 }
